@@ -11,9 +11,8 @@
 #### Show url repo
      $ git remote show origin 
 
-
 #### Show remote branch
-  $ git branch -a
+     $ git branch -a
 
 #### Checkout local branch
      $ git checkout [branch_name]
@@ -69,3 +68,24 @@
 
 #### Abort a rebase
      $ git rebase --abort    
+ 
+ 
+#### what "git remote prune" ?
+
+When you use 
+
+	$ git push origin :staleStuff
+	
+it automatically removes 
+
+	origin/staleStuff
+	
+so when you ran 
+
+	git remote prune origin
+
+you have pruned some branch that was removed by someone else. It’s more likely that your co-workers now need to run 
+
+	git prune
+
+to get rid of branches you have removed.
