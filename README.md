@@ -27,7 +27,7 @@
      $ git push origin :[branch_name]
      
 #### Cleaning Old Local Branches With Git  (delete at once all local branches that have already been merged to master)   
-     $ git​ branch --merged master | grep -v 'master$' | xargs ​git​ branch -d
+     $ git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 
 #### To see the last commit on each branch
      $ git branch -v
