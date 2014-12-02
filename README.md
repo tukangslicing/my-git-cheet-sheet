@@ -18,7 +18,7 @@
      $ git checkout [branch_name]
 
 #### Checkout remote branch
-     $ git check -b [branch_name] origin/[branch_name]
+     $ git checkout -b [branch_name] origin/[branch_name]
 
 #### Delete local branch
      $ git branch -d [branch_name]  (to force using -D)
@@ -37,6 +37,9 @@
 
 #### Rever file (changes file)    
      $ git chechout -- <file_path>
+
+#### View a file in another branch
+     $ git show branch:<file_path>
 
 #### Commit
      $ git commit -am "[commit_message]"
@@ -66,6 +69,13 @@
 #### Get my stashed stuff back:
      $ git stash apply    
 
+#### How can I git stash a specific file?
+     $ git add <file_path>
+     $ git stash --keep-index
+     $ git reset
+**Last step is optional, but usually you want it. It removes changes from index.**
+    
+
 #### Rebase your current HEAD onto <branch>. Don‘t rebase published commits!
      $ git rebase [branch_name]
 
@@ -77,18 +87,18 @@
 
 When you use 
 
-	$ git push origin :staleStuff
-	
+     $ git push origin :staleStuff
+     
 it automatically removes 
 
-	origin/staleStuff
-	
+     origin/staleStuff
+     
 so when you ran 
 
-	git remote prune origin
+     git remote prune origin
 
 you have pruned some branch that was removed by someone else. It’s more likely that your co-workers now need to run 
 
-	git prune
+     git prune
 
 to get rid of branches you have removed.
