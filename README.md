@@ -102,3 +102,9 @@ you have pruned some branch that was removed by someone else. It’s more likely
      git prune
 
 to get rid of branches you have removed.
+
+#### How do I make Git ignore file mode (chmod) changes?
+
+     $ git config core.fileMode false
+     
+check [resource](http://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes)
